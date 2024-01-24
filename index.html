@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="shortcut icon" type="image/x-icon" href="https://devchallenges.io/">
+        <link rel="StyleSheet" href="index.css">
+        <title>Responsive Web Developer Starter - devchallenges.io</title>
+        <!-- textFonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+        
+
+    </head>
+    <body>
+        <header>
+        <div class="LogoHeader"><img class="logo" src="src/Hero-Image-WhiteLogo.png" alt="Main Logo"></div>
+        <div class="NavbarHeader">
+            <h3>About Us</h3>
+            <h3>Product</h3>
+            <h3>Resource</h3>
+            <h3>Contact</h3>
+        </div>
+        <div class="Night-Mode">
+        <label class="switch modern-switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+        </label>
+        </div>
+        </header>
+
+        <!-- Main content -->
+        <main>
+            <div class="mainflex">
+            <div>
+                <p class="UpperText">
+                  😎Simple way to communicate  
+                </p>
+                <p class="MidText">
+                 Actions for<br> Accessibility<br> in Design 
+                </p>
+                <p class="MidStyleText">The faster way to build and deploy websites with<br> resusable components</p>
+
+                <div class="mainButtons">
+                    <div type="button" class="ButtonStart"><h3>GET STARTED</h3></div>
+                    <div class="Contenedor">
+                        <a id="Animation" >Get live demo</a>
+                    </div>
+                </div>
+                <div class="ContenedorF">
+                    <img><h4>✅No credit card required</h4>
+                    <img><h4>✅No software to install</h4> 
+                </div>
+            </div>
+            <div>
+                <img src="/src/hero-image-simple-homepage.png">
+            </div>
+
+        </div>
+      
+
+        </main>
+
+
+
+
+
+        <footer></footer>
+
+
+
+        <script>
+           const NightModeButton = document.getElementById('slider');
+           NightModeButton.addEventListener('click', SwitchNightMode)
+           
+            function SwitchNightMode(){
+               return NightModeButton.classList.toggle("dark-mode"),
+               alert("itworked")
+               
+            }
+
+        </script>
+    </body>
+</html>
