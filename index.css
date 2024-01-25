@@ -4,25 +4,82 @@ html {
   font-family: "Poppins", sans-serif;
 }
 
-
-
-:root{
---mainBgColor: #020617;
---secundaryBgColor:#cbd5e1;
-
+:root {
+  --mainBgColor: #020617;
+  --secundaryBgColor: #cbd5e1;
 }
-.dark-mode{
---mainBgColor: #cbd5e1;
---secundaryBgColor:#020617;
-
+.light-theme {
+  background-color: #fff;
+  color: #333;
+}
+.dark-theme {
+  background-color: #1a1a1a;
+  color: #fff;
+}
+.theme-toggle {
+  cursor: pointer;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  text-align: center;
+  margin: 20px;
 }
 
+/* Seccion del Lateral NavBar para dispositivos mobiles-
+Invisible para dispositivos mayores a 720px */
+
+.sidebar-links {
+  list-style: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.sidebar-links li {
+  margin-bottom: 10px;
+}
+
+.sidebar-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.sidebar {
+  position: absolute;
+  top: 0;
+  right: -300px; /* Ocultar la barra lateral inicialmente en la parte derecha */
+  width: 250px;
+  height: 100%;
+  background-color: #eee;
+  overflow-y: auto;
+  transition: right 0.3s ease;
+}
+.close-btn {
+  font-size: 2em;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.lateralNavbar {
+  display: none;
+  visibility: hidden;
+}
+
+.navbar-header {
+  display: flex;
+  align-items: center;
+}
+.toggle-btn {
+  font-size: 1.5em;
+  cursor: pointer;
+  margin-right: 10px;
+  display: none; /* Ocultar inicialmente en pantallas mayores a 720px */
+}
 
 body {
   background: var(--mainBgColor);
   color: var(--secundaryBgColor);
   transition: background-color 0.3s, color 0.3s;
-
 }
 body,
 h1,
@@ -40,7 +97,6 @@ a {
   color: inherit;
 }
 
-
 header {
   padding: 1%;
   padding-left: 4%;
@@ -50,17 +106,20 @@ header {
 }
 .LogoHeader {
   display: block;
+  cursor: pointer;
 }
 header div img {
   max-width: 250px;
   max-height: 250px;
 }
 .NavbarHeader {
+  white-space: nowrap;
   display: flex;
-  gap: 7%;
+  gap: 10%;
   font-size: 15px;
   margin: 0;
   padding: 0;
+  cursor: pointer;
 }
 .NavbarHeader h3 {
   max-width: 140px;
@@ -74,7 +133,6 @@ header div img {
   display: inline-block;
   width: 60px;
   height: 34px;
- 
 }
 
 .switch input {
@@ -168,9 +226,10 @@ main div img {
 .mainButtons {
   display: flex;
   margin-top: 5%;
+  justify-content: space-around;
+  align-items: center;
 }
 .ButtonStart {
-  
   outline: none;
   display: flex;
   background-color: #2b4ed0;
@@ -182,12 +241,14 @@ main div img {
   align-content: center;
   margin-left: 5%;
   margin-right: 5%;
+  cursor: pointer;
 }
 .ButtonStart h3 {
   font-size: medium;
   display: flex;
   justify-items: center;
   align-items: center;
+  cursor: pointer;
 }
 #Animation {
   position: relative;
@@ -196,7 +257,7 @@ main div img {
 .Contenedor {
   top: 60px;
   align-content: center;
-  
+  cursor: pointer;
 }
 
 #Animation::before {
@@ -219,6 +280,27 @@ main div img {
 }
 .ContenedorF {
   display: flex;
+  justify-content: space-between;
+}
+.SizeBox{
+  width: 15px;
+}
+
+/* Hero Image  */
+
+.Hero-image{
+  animation: FloatingshadowAnimation 5s infinite; 
+}
+
+@keyframes FloatingshadowAnimation {
+  0%, 100% {
+    transform: translateY(0);
+    filter: drop-shadow(0px 0px 1px white);
+  }
+  50% {
+    transform: translateY(-18px);
+    filter: drop-shadow(0px 0px 5px white);
+  }
 }
 
 /* Dispositivos Mobiles */
@@ -237,6 +319,39 @@ main div img {
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
   }
+  /* Header Anterior escondido */
+
+  /* lateral navbar */
+  .lateralNavbar {
+    display: block;
+    visibility: visible;
+  }
+
+  .toggle-btn {
+    display: block; /* Mostrar el botón en pantallas de 720px o menos */
+  }
+  .navbar-links {
+    display: none; /* Ocultar en pantallas de 720px o menos */
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* Ajustar según el diseño */
+    left: 0;
+    width: 100%;
+    background-color: #333;
+  }
+  .navbar-links.show {
+    display: flex;
+  }
+
+  .navbar-links li {
+    margin: 0;
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid #555;
+  }
+
+  .sidebar {
+    right: 0; /* Mostrar la barra lateral en la parte derecha en pantallas de 720px o menos */
+  }
 }
 /* Modo Nocturno */
-

@@ -9,11 +9,16 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-        
-
+    
     </head>
+
+
+
     <body>
         <header>
+
+          <!-- Navbar Header para dispositivos web -->
+      
         <div class="LogoHeader"><img class="logo" src="src/Hero-Image-WhiteLogo.png" alt="Main Logo"></div>
         <div class="NavbarHeader">
             <h3>About Us</h3>
@@ -21,17 +26,37 @@
             <h3>Resource</h3>
             <h3>Contact</h3>
         </div>
-        <div class="Night-Mode">
+        <div class="Night-Mode" onclick="toggleTheme()"">
         <label class="switch modern-switch">
             <input type="checkbox">
             <span class="slider round"></span>
         </label>
         </div>
+
+       
+          </div>
+          
         </header>
+
+        
 
         <!-- Main content -->
         <main>
+        
+
+
+
+
             <div class="mainflex">
+                <!-- <div class="sidebar">
+                    <span class="close-btn">&times;</span>
+                    <ul class="sidebar-links">
+                      <li><a href="#">About us</a></li>
+                      <li><a href="#">Product</a></li>
+                      <li><a href="#">Resource</a></li>
+                      <li><a href="#">Contact</a></li>
+                    </ul>
+                  </div> -->
             <div>
                 <p class="UpperText">
                   😎Simple way to communicate  
@@ -49,10 +74,11 @@
                 </div>
                 <div class="ContenedorF">
                     <img><h4>✅No credit card required</h4>
+                    <div class="SizeBox"></div>
                     <img><h4>✅No software to install</h4> 
                 </div>
             </div>
-            <div>
+            <div class="Hero-image">
                 <img src="/src/hero-image-simple-homepage.png">
             </div>
 
@@ -70,14 +96,11 @@
 
 
         <script>
-           const NightModeButton = document.getElementById('slider');
-           NightModeButton.addEventListener('click', SwitchNightMode)
-           
-            function SwitchNightMode(){
-               return NightModeButton.classList.toggle("dark-mode"),
-               alert("itworked")
-               
-            }
+         function toggleTheme(){
+            const body = document.body;
+            body.classList.toggle("dark-theme");
+            body.classList.toggle("light-theme");
+         }
 
         </script>
     </body>
