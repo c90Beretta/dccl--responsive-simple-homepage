@@ -99,7 +99,7 @@ a {
 
 header {
   padding: 1%;
-  padding-left: 4%;
+  padding-left: 1%;
   display: flex;
   justify-content: space-between;
   padding-bottom: 7%;
@@ -117,10 +117,21 @@ header div img {
   display: flex;
   gap: 10%;
   font-size: 15px;
-  margin: 0;
-  padding: 0;
+  max-width: 1200px;
   cursor: pointer;
 }
+.NavbarHeader ul{
+  width: 650px;
+  display: flex;
+  justify-content: space-evenly;
+  font-weight: bolder;
+  font-size: large;
+}
+.NavbarHeader li {
+  display: inline;
+  padding: 2%;
+}
+
 .NavbarHeader h3 {
   max-width: 140px;
 }
@@ -192,6 +203,9 @@ header div img {
 
 /* Maincontent */
 main {
+
+  position: relative;
+  bottom: 50px;
   margin: 0;
   align-content: center;
   justify-content: space-around;
@@ -304,20 +318,10 @@ main div img {
 }
 
 /* Dispositivos Mobiles */
-@media (max-width: 768px) {
-  main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    row-gap: 0.5rem;
-    column-gap: 1.5rem;
-  }
+@media screen and (max-width: 768px) {
 
-  footer {
+  .mainflex{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
   }
   /* Header Anterior escondido */
 
@@ -325,6 +329,7 @@ main div img {
   .lateralNavbar {
     display: block;
     visibility: visible;
+    
   }
 
   .toggle-btn {
