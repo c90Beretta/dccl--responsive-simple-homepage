@@ -296,7 +296,6 @@ main div img {
     gap: 7px;
     font-size: 16px;
   }
-/* Todo: Fix Logo Overflow */
   .logo{
     width: 170px;
   }
@@ -338,7 +337,20 @@ main div img {
     display: none;
   } */
 
-
+  .Hero-image{
+    animation: FloatingshadowAnimation 5s infinite; 
+  }
+  
+  @keyframes FloatingshadowAnimation {
+    0%, 100% {
+      transform: translateY(0);
+      filter: drop-shadow(0px 0px 1px white);
+    }
+    50% {
+      transform: translateY(-18px);
+      filter: drop-shadow(0px 0px 5px white);
+    }
+  }
 
 
 
@@ -363,17 +375,14 @@ main div img {
   /* lateral navbar */
 
 
-  /* //TODO: */
-  .navbar{
-    display: grid;
-  }
+ 
   .OpenLatbar{
     display: block;
     visibility: visible;
     font-size: 30px; 
     cursor: pointer;
      right: 0; 
-     position: fixed
+     position: fixed;
   }
   .lateralNavbar {
     display: flex;
@@ -395,12 +404,12 @@ main div img {
     text-decoration: none;
     font-size: 25px;
     color: #818181;
-    display: block;
+    display: flex;
     transition: 0.3s;
     justify-self: center;
   }
   .navbar {
-    display: flexbox;
+    display: block;
     height: 100%;
     width: 0;
     position: fixed;
@@ -415,6 +424,14 @@ main div img {
     justify-items: center;
     font-family: "Poppins", sans-serif;
     font-weight: bolder;
+  }
+
+
+
+  .slider round{
+
+    margin-left: 40px;
+    right: 40px;
   }
 }
 /* Modo Nocturno */
