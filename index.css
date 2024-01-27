@@ -28,42 +28,15 @@ html {
 /* Seccion del Lateral NavBar para dispositivos mobiles-
 Invisible para dispositivos mayores a 720px */
 
-.sidebar-links {
-  list-style: none;
-  padding: 0;
-  cursor: pointer;
-}
-
-.sidebar-links li {
-  margin-bottom: 10px;
-}
-
-.sidebar-links a {
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-}
-
-.sidebar {
-  position: absolute;
-  top: 0;
-  right: -300px; /* Ocultar la barra lateral inicialmente en la parte derecha */
-  width: 250px;
-  height: 100%;
-  background-color: #eee;
-  overflow-y: auto;
-  transition: right 0.3s ease;
-}
-.close-btn {
-  font-size: 2em;
-  cursor: pointer;
-  margin-left: 10px;
-}
-
-.lateralNavbar {
+.navbar{
   display: none;
-  visibility: hidden;
 }
+.OpenLatbar{
+  display: none;
+}
+
+
+
 
 .navbar-header {
   display: flex;
@@ -108,7 +81,7 @@ header {
   display: block;
   cursor: pointer;
 }
-header div img {
+.logo {
   max-width: 250px;
   max-height: 250px;
 }
@@ -203,7 +176,7 @@ header div img {
 
 /* Maincontent */
 main {
-
+  transition: margin-right 0.5s;
   position: relative;
   bottom: 50px;
   margin: 0;
@@ -316,47 +289,132 @@ main div img {
     filter: drop-shadow(0px 0px 5px white);
   }
 }
+@media screen and (max-width: 1024px) {
+  .NavbarHeader ul {
+    width: 300px;
+    display: flex;
+    gap: 7px;
+    font-size: 16px;
+  }
+/* Todo: Fix Logo Overflow */
+  .logo{
+    width: 170px;
+  }
 
-/* Dispositivos Mobiles */
-@media screen and (max-width: 768px) {
-
+  .UpperText {
+    font-size: 16px;
+  }
+  .MidText {
+    font-size: 42px;
+    line-height: 1.5;
+    padding-bottom: 8%;
+  }
   .mainflex{
     display: grid;
   }
-  /* Header Anterior escondido */
+  .InformationSide{
+    order: 1;
+   overflow: visible;
+   white-space: nowrap;
+  }
+  .Hero-image{
+    justify-items:center ;
+  }
+}
+
+
+
+
+/* Dispositivos Mobiles */
+@media screen and (max-width: 768px) {
+  .InformationSide{
+    order: 1;
+  }
+  .mainflex{
+    display: grid;
+    order: 2;
+  }
+  /* .LogoHeader{
+    display: none;
+  } */
+
+
+
+
+
+
+
+/* Header Anterior escondido */
+
+.NavbarHeader{
+  display: none;
+}
+.Night-Mode{
+  display:  none;
+}
+
+
+
+
+
+
+
 
   /* lateral navbar */
-  .lateralNavbar {
+
+
+  /* //TODO: */
+  .navbar{
+    display: grid;
+  }
+  .OpenLatbar{
     display: block;
     visibility: visible;
+    font-size: 30px; 
+    cursor: pointer;
+     right: 0; 
+     position: fixed
+  }
+  .lateralNavbar {
+    display: flex;
     
   }
-
-  .toggle-btn {
-    display: block; /* Mostrar el botón en pantallas de 720px o menos */
-  }
-  .navbar-links {
-    display: none; /* Ocultar en pantallas de 720px o menos */
-    flex-direction: column;
+  .navbar .closebtn {
     position: absolute;
-    top: 60px; /* Ajustar según el diseño */
-    left: 0;
-    width: 100%;
-    background-color: #333;
+    top: 0;
+    left: 25px;
+    font-size: 36px;
+    margin-right: 50px;
   }
-  .navbar-links.show {
-    display: flex;
+  .navbar a:hover {
+    color: #020617;
   }
-
-  .navbar-links li {
-    margin: 0;
-    text-align: center;
-    padding: 10px;
-    border-bottom: 1px solid #555;
+  
+  .navbar a {
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    justify-self: center;
   }
-
-  .sidebar {
-    right: 0; /* Mostrar la barra lateral en la parte derecha en pantallas de 720px o menos */
+  .navbar {
+    display: flexbox;
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: white;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    align-content: center;
+    justify-items: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: bolder;
   }
 }
 /* Modo Nocturno */

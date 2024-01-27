@@ -1,110 +1,123 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <link rel="shortcut icon" type="image/x-icon" href="https://devchallenges.io/">
-        <link rel="StyleSheet" href="index.css">
-        <title>Responsive Web Developer Starter - devchallenges.io</title>
-        <!-- textFonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    
-    </head>
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="https://devchallenges.io/"
+    />
+    <link rel="StyleSheet" href="index.css" />
+    <title>Responsive Web Developer Starter - devchallenges.io</title>
+    <!-- textFonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
+  <body>
+    <header>
+      <!-- Navbar Header para dispositivos web -->
 
+      <div class="LogoHeader">
+        <img class="logo" src="src/Hero-Image-WhiteLogo.png" alt="Main Logo" />
+      </div>
+      <span class="OpenLatbar" onclick="openNav()">&#9776;</span>
 
-    <body>
-        <header>
-
-          <!-- Navbar Header para dispositivos web -->
-      
-        <div class="LogoHeader"><img class="logo" src="src/Hero-Image-WhiteLogo.png" alt="Main Logo"></div>
-        <div class="NavbarHeader">
-            <ul>
-                <li>About Us</li>
-                <li>Product</li>
-                <li>Resource</li>
-                <li>Contact</li>
-            </ul>   
-   
-        </div>
-        <div class="Night-Mode" onclick="toggleTheme()"">
+      <div class="NavbarHeader">
+        <ul>
+          <li>About Us</li>
+          <li>Product</li>
+          <li>Resource</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+      <div class="Night-Mode" onclick="toggleTheme()">
         <label class="switch modern-switch">
-            <input type="checkbox">
-            <span class="slider round"></span>
+          <input type="checkbox" />
+          <span class="slider round"></span>
         </label>
-        </div>
+      </div>
+      <!-- Lateral NavBar para Dispositivos Mobiles -->
+      <div id="navbar" class="navbar">
+        <a href="#" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">About us</a>
+        <a href="#">Product</a>
+        <a href="#">Resource</a>
+        <a href="#">Contact</a>
+      </div>
+    </header>
 
-       
+    <!-- Main content -->
+    <main>
+      <div class="mainflex">
+        <div class="InformationSide">
+          <p class="UpperText">😎Simple way to communicate</p>
+          <p class="MidText">
+            Actions for<br />
+            Accessibility<br />
+            in Design
+          </p>
+          <p class="MidStyleText">
+            The faster way to build and deploy websites with<br />
+            resusable components
+          </p>
+
+          <div class="mainButtons">
+            <div type="button" class="ButtonStart"><h3>GET STARTED</h3></div>
+            <div class="Contenedor">
+              <a id="Animation">Get live demo</a>
+            </div>
           </div>
-          
-        </header>
-
-        
-
-        <!-- Main content -->
-        <main>
-        
-
-
-
-
-            <div class="mainflex">
-                <!-- <div class="sidebar">
-                    <span class="close-btn">&times;</span>
-                    <ul class="sidebar-links">
-                      <li><a href="#">About us</a></li>
-                      <li><a href="#">Product</a></li>
-                      <li><a href="#">Resource</a></li>
-                      <li><a href="#">Contact</a></li>
-                    </ul>
-                  </div> -->
-            <div>
-                <p class="UpperText">
-                  😎Simple way to communicate  
-                </p>
-                <p class="MidText">
-                 Actions for<br> Accessibility<br> in Design 
-                </p>
-                <p class="MidStyleText">The faster way to build and deploy websites with<br> resusable components</p>
-
-                <div class="mainButtons">
-                    <div type="button" class="ButtonStart"><h3>GET STARTED</h3></div>
-                    <div class="Contenedor">
-                        <a id="Animation" >Get live demo</a>
-                    </div>
-                </div>
-                <div class="ContenedorF">
-                    <img><h4>✅No credit card required</h4>
-                    <div class="SizeBox"></div>
-                    <img><h4>✅No software to install</h4> 
-                </div>
-            </div>
-            <div class="Hero-image">
-                <img src="/src/hero-image-simple-homepage.png">
-            </div>
-
+          <div class="ContenedorF">
+            <img />
+            <h4>✅No credit card required</h4>
+            <div class="SizeBox"></div>
+            <img />
+            <h4>✅No software to install</h4>
+          </div>
         </div>
-      
+        <div>
+          <img src="/src/hero-image-simple-homepage.png" />
+        </div>
+      </div>
+    </main>
 
-        </main>
+    <footer></footer>
 
+    <script>
+      function toggleTheme() {
+        const body = document.body;
+        body.classList.toggle("dark-theme");
+        body.classList.toggle("light-theme");
+      }
+      function openNav() {
+        document.getElementById("navbar").style.width = "250px";
+        document.getElementById("main").style.marginRight = "250px";
 
+        // Agregar un event listener para cerrar el navbar al hacer clic fuera de él
+        document.addEventListener("click", closeNavOutside);
+      }
 
+      function closeNav() {
+        document.getElementById("navbar").style.width = "0";
+        document.getElementById("main").style.marginRight = "0";
 
+        // Eliminar el event listener cuando se cierra el navbar
+        document.removeEventListener("click", closeNavOutside);
+      }
 
-        <footer></footer>
-
-
-
-        <script>
-         function toggleTheme(){
-            const body = document.body;
-            body.classList.toggle("dark-theme");
-            body.classList.toggle("light-theme");
-         }
-
-        </script>
-    </body>
+      function closeNavOutside(event) {
+        if (
+          !event.target.closest("#navbar") &&
+          !event.target.closest("#main")
+        ) {
+          closeNav();
+        }
+      }
+    </script>
+  </body>
 </html>
