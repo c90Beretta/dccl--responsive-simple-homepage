@@ -5,17 +5,23 @@ html {
 }
 
 :root {
-  --mainBgColor: #020617;
-  --secundaryBgColor: #cbd5e1;
+--mainBgColor: #f2f9ff;
+--secundaryBgColor: #020617; 
+
+/* dark Theme */
+--mainBgColor: #020617;
+--secundaryBgColor: #f2f9ff; 
+
 }
-.light-theme {
+
+/* .light-theme {
   background-color: #fff;
   color: #333;
 }
 .dark-theme {
   background-color: #1a1a1a;
   color: #fff;
-}
+} */
 .theme-toggle {
   cursor: pointer;
   padding: 10px;
@@ -81,7 +87,7 @@ header {
   display: block;
   cursor: pointer;
 }
-.logo {
+.logo1 {
   max-width: 250px;
   max-height: 250px;
 }
@@ -157,7 +163,7 @@ header {
 
 .switch input:checked + .slider:before {
   transform: translateX(26px);
-  background-color: #cbd5e1;
+  background-color: #f2f9ff;
 }
 
 .switch input:checked + .slider {
@@ -171,6 +177,7 @@ header {
 .switch input:not(:checked) + .slider {
   background-color: #020617;
 }
+
 
 /* WriestTavo es un menso*/
 
@@ -226,8 +233,8 @@ main div img {
   width: 160px;
   justify-content: center;
   align-content: center;
-  margin-left: 5%;
-  margin-right: 5%;
+  /* margin-left: 5%;
+  margin-right: 5%; */
   cursor: pointer;
 }
 .ButtonStart h3 {
@@ -296,7 +303,7 @@ main div img {
     gap: 7px;
     font-size: 16px;
   }
-  .logo{
+  .logo1{
     width: 170px;
   }
 
@@ -333,9 +340,7 @@ main div img {
     display: grid;
     order: 2;
   }
-  /* .LogoHeader{
-    display: none;
-  } */
+
 
   .Hero-image{
     animation: FloatingshadowAnimation 5s infinite; 
@@ -353,7 +358,17 @@ main div img {
   }
 
 
+  .Second-Switch{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 10%;
+    margin-right: 3%;
+  }
 
+  
 
 
 /* Header Anterior escondido */
@@ -427,11 +442,5 @@ main div img {
   }
 
 
-
-  .slider round{
-
-    margin-left: 40px;
-    right: 40px;
-  }
 }
 /* Modo Nocturno */

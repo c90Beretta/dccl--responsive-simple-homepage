@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js"></script>
+    <title>Mi Página con Night Mode</title>
+    <style>
+      #contenedorImagen1 {
+        height: 200px;
+        width: 200px;
+      }
+      #contenedorImagen1 img {
+        object-fit: fill;
+  
+      }
+      #contenedorImagen2 {
+        display: none;
+        height: 300px;
+        width: 300px;
+      }
+
+      .fondoBlanco {
+        background-color: rgb(104, 101, 101);
+      }
+      .fondoNegro {
+        background-color: #444;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="contenedorImagen1">
+      <img
+        src="src/Hero-Image-WhiteLogo.png"
+        alt="fondoBlanco"
+        id="imagenPrincipal"
+      />
+    </div>
+        <div id="contenedorImagen2">
+          <img
+            src="src/alarado-icon-homepage.svg"
+            alt="fondoNegro"
+            id="imagenPrincipalNegro" 
+          />
+        </div>
+        
+    
+ 
+    <div>
+      <button onclick=";RemplazarImagenes();CambiarFondo()">
+        Cambiar Imagen
+      </button>
+    </div>
+
+    <script>
+      function CambiarFondo() {
+        var imagen = document.getElementById("imagenPrincipal");
+        const body = document.querySelector("body");
+        if (body.classList.contains("fondoBlanco")) {
+          body.classList.remove("fondoBlanco");
+          body.classList.add("fondoNegro ");
+        } else if (body.classList.contains("fondoNegro")) {
+          body.classList.remove("fondoNegro");
+          body.classList.add("fondoBlanco");
+        } else {
+          // En caso de que el body no tenga ninguna de las dos clases, agregamos una.
+          body.classList.add("fondoBlanco");
+        }
+      }
+
+
+      function RemplazarImagenes() {
+    var contenedor1 = document.getElementById("contenedorImagen1");
+    var contenedor2 = document.getElementById("contenedorImagen2");
+
+    // Si contenedor1 es visible o si no se ha establecido un valor para display
+    if (contenedor1.style.display !== "none" || contenedor1.style.display === "") {
+      contenedor1.style.display = "none";
+      contenedor2.style.display = "block";
+    } else {
+      contenedor1.style.display = "block";
+      contenedor2.style.display = "none";
+    }
+  }
+    </script>
+  </body>
+</html>
