@@ -11,10 +11,18 @@ html {
 --secundaryBgColor:#cbd5e1;
 
 }
-.dark-mode{
+.dark{
 --mainBgColor: #cbd5e1;
 --secundaryBgColor:#020617;
 
+}
+#darklogo{
+  display: none;
+  transition: opacity 0.3s ease-in-out;
+}
+#whitelogo{
+  transition: opacity 0.3s ease-in-out;
+  display: flex;
 }
 
 
@@ -48,13 +56,13 @@ header {
   justify-content: space-between;
   padding-bottom: 7%;
 }
-.LogoHeader {
-  display: block;
-}
+
 header div img {
   max-width: 250px;
   max-height: 250px;
 }
+
+
 .NavbarHeader {
   display: flex;
   gap: 7%;
@@ -151,6 +159,25 @@ main div img {
   max-width: 500px;
   max-height: 500px;
 }
+.mainimage {
+  position: flex;
+  transform: translate(0%, 1%);
+}
+@keyframes gravedad {
+  0% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(5%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+  
+}
+.mainimage img {
+  animation: gravedad 4s infinite;
+}
 .UpperText {
   font-size: 13px;
   text-transform: uppercase;
@@ -163,7 +190,8 @@ main div img {
   padding-bottom: 8%;
 }
 .MidStyleText {
-  color: #6387ac;
+  color: var(--secundaryBgColor) ;
+  opacity: 0.8;
 }
 .mainButtons {
   display: flex;
@@ -221,9 +249,19 @@ main div img {
   display: flex;
 }
 
+
 /* Dispositivos Mobiles */
 @media (max-width: 768px) {
   main {
+   display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .Maintext{
+    order: 1;
+  }
+  header {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -237,6 +275,21 @@ main div img {
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
   }
+   
+  main div img {
+    max-width: 300px;
+    max-height: 300px;
+  }
+  .mainimage {
+    order: 2;
+  }
+
+  img h4 { 
+    margin: 1.5rem;
+    padding: 3%;
+  }
+  
 }
 /* Modo Nocturno */
+
 

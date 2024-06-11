@@ -14,7 +14,8 @@
     </head>
     <body>
         <header>
-        <div class="LogoHeader"><img class="logo" src="src/Hero-Image-WhiteLogo.png" alt="Main Logo"></div>
+        <div id="darklogo"><img class="logo" src="src/Dark.svg" alt="Main Logo"></div>
+        <div id="whitelogo"> <img class="Logo" src="src/white.svg" alt="Main logo"></div>
         <div class="NavbarHeader">
             <h3>About Us</h3>
             <h3>Product</h3>
@@ -32,9 +33,10 @@
         <!-- Main content -->
         <main>
             <div class="mainflex">
+            <div class = "Maintext">
             <div>
                 <p class="UpperText">
-                  😎Simple way to communicate  
+                  😎 Simple way to communicate  
                 </p>
                 <p class="MidText">
                  Actions for<br> Accessibility<br> in Design 
@@ -48,11 +50,14 @@
                     </div>
                 </div>
                 <div class="ContenedorF">
-                    <img><h4>✅No credit card required</h4>
-                    <img><h4>✅No software to install</h4> 
+                    <table>
+                        <th><h4>✅  No credit card required    </h4></th>
+                        <th><h4>✅  No software to install </h4></th>
+                </table> 
                 </div>
             </div>
-            <div>
+        </div>
+            <div class = "mainimage">
                 <img src="/src/hero-image-simple-homepage.png">
             </div>
 
@@ -61,23 +66,29 @@
 
         </main>
 
-
-
-
-
         <footer></footer>
+       
+       
+       <script>
+        const switchinput = document.querySelector('input[type="checkbox"]');
+        switchinput.addEventListener('change', () => {
+            document.body.classList.toggle('dark');
+        });
+       
 
+        const whitelogo = document.getElementById('whitelogo');
+        const darklogo = document.getElementById('darklogo');
 
-
-        <script>
-           const NightModeButton = document.getElementById('slider');
-           NightModeButton.addEventListener('click', SwitchNightMode)
-           
-            function SwitchNightMode(){
-               return NightModeButton.classList.toggle("dark-mode"),
-               alert("itworked")
-               
-            }
+        switchinput.addEventListener('change', () => {
+           if(whitelogo.style.display === "none"){
+            whitelogo.style.display = "block";
+            darklogo.style.display = "none";
+           } else{
+            whitelogo.style.display = "none";
+            darklogo.style.display = "block";
+           }
+        });
+            
 
         </script>
     </body>
